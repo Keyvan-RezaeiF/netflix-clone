@@ -6,14 +6,22 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import LoginScreen from './screens/LoginScreen'
 
 function App() {
+
+  const user = null;
+
   return (
     <div className="app">
       <Router>
-        <Routes>
-          <Route exaxt path='/' element={<HomeScreen />} />
-        </Routes>
+        {!user ? (
+          <LoginScreen />
+        ) : (
+          <Routes>
+            <Route exaxt path='/' element={<HomeScreen />} />
+          </Routes>
+        )}
       </Router>
     </div>
   );
